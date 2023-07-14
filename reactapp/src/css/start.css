@@ -1,0 +1,22 @@
+.body{
+        background-image: url("../Assets/account.jpg");
+        min-height: 100vh;
+        min-width: 100vw;
+        position:absolute; 
+}
+.startContainer {
+    /* background-color: #FFFFFF; */
+    width: 60em;
+    height: 22em !important;
+    border-radius: 20px !important;
+    left:30%;
+    top:28%;
+    padding: 20px;
+    margin-right: 100px;
+    position: fixed;
+}
+
+.nav {
+    position: sticky;
+    background-color: #FFFFFF;
+}

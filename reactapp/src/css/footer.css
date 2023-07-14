@@ -1,0 +1,14 @@
+body{
+margin: 0;
+padding: 0;
+}
+
+.backContainer{
+  background-color: #F2EAD3;
+  text-align: center;
+
+  width: 100%;
+  padding: 8px;
+  color:#3F2305;
+}
+
