@@ -1,0 +1,183 @@
+body{
+  background-color:#F5F5F5;
+  font-family: Arial, sans-serif;
+  display: block !important;
+  align-items: none !important;
+  justify-content: none !important;
+}
+.navbar{
+   align-items: center!important;
+}
+.pie{
+    align-items: left !important;
+    float: left !important;
+    background-color: transparent !important;
+    margin-top: 30px;
+    margin-left: 20px;
+    box-shadow:5px 3px 10px 4px #3F2305  ;
+    outline: 3px solid #F2EAD3;
+    & h3{
+        color: #3F2305;
+        background-color: #F2EAD3;
+        padding: 0px;
+        margin:0px;
+        font-family: Arial, Helvetica, sans-serif;
+        border: 6px #3F2305 !important;
+    }
+        #we{
+        color: #F2EAD3;
+        background-color: #3F2305;
+        padding: 0px;
+        margin:0px;
+        font-family: Arial, Helvetica, sans-serif;
+        border: 6px #3F2305 !important;
+    }
+    
+}
+.pie1{
+    align-items: left !important;
+    float: left !important;
+    background-color: transparent !important;
+    margin-top: 20px;
+    margin-left: 100px;
+    box-shadow:5px 3px 10px 4px #3F2305  ;
+    outline: 3px solid #F2EAD3;
+    & h3{
+        color: #3F2305;
+        background-color: #F2EAD3;
+        padding: 0px;
+        margin:0px;
+        font-family: Arial, Helvetica, sans-serif;
+        border: 6px #3F2305 !important;
+    }
+        #we{
+        color: #F2EAD3;
+        background-color: #3F2305;
+        padding: 0px;
+        margin:0px;
+        font-family: Arial, Helvetica, sans-serif;
+        border: 6px #3F2305 !important;
+    }
+    input[type="number"] {
+  width: 95%;
+  padding: 10px;
+  margin-left: 0;
+  margin-bottom: 15px;
+  border:1px solid #F5F5F5;
+  border-bottom: none !important;
+  outline: none !important;
+  border-radius: 7px;
+    box-shadow:1px 0px 3px 0px #3F2305;
+}
+input[type="number"]:focus {
+    outline: none !important;
+    border:1px solid #F5F5F5;
+}
+input[type="button"] {
+  background-color: #3F2305;
+  color: #DFD7BF;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+}
+    
+}
+.card{
+    align-items: left !important;
+    float: left !important;
+    background-color: transparent !important;
+    margin-top: 30px;
+    margin-left: 20px;
+    box-shadow:5px 3px 10px 4px #3F2305  ;
+    outline: 3px solid #F2EAD3;
+    width: max-content;
+    & input{
+  width: 100%;
+  padding: 10px;
+  margin-left: 0;
+  margin-bottom: 15px;
+  border:1px solid #F5F5F5;
+  border-bottom: none !important;
+  border-radius: 7px;
+}
+}
+a{
+ text-decoration: none !important; 
+ color:rgb(40, 38, 38)
+}
+a:visited:hover{
+color: #F5F5F5;
+}
+.marquee-container{
+    display: flex;
+    align-items: center;
+    background: #DFD7BF;
+    overflow: hidden;
+}
+.marquee{
+    font-size: 20px;
+    line-height: 1.3;
+    font-family: sans-serif;
+    padding: 24px 0;
+    color: #fff;
+    white-space: nowrap;
+    animation: marquee 3.5s infinite linear; /* notice the infinite */
+}
+.marquee:after{
+    content: "LONDON - PARIS - SYDNEY - TOKYO - NEW YORK - BERLIN - ROME";
+}
+@keyframes marquee{
+    0% {
+        transform: translateX(0)
+    }
+    100% {
+        transform: translateX(-50%)
+    }
+}
+.align{
+  margin-left: 83px;
+}
+.align2{
+    margin-left:10%;
+}
+.aligntax{
+    padding-right: 150px;
+    margin-left: 10%;
+}
+input[type="number"] {
+  width: 95%;
+  padding: 10px;
+  margin-left: 0;
+  margin-bottom: 15px;
+  border:1px solid #F5F5F5;
+  border-bottom: none !important;
+  outline: none !important;
+  border-radius: 7px;
+    box-shadow:1px 0px 3px 0px #3F2305;
+}
+input[type="number"]:focus {
+    outline: none !important;
+    border:1px solid #F5F5F5;
+}
+input[type="button"] {
+  background-color: #3F2305;
+  color: #DFD7BF;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+}
+label{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    color:#3F2305;
+}
+.alignhome{
+    margin-left: 0%;
+}
+.next{
+    margin-top:0%;
+}
