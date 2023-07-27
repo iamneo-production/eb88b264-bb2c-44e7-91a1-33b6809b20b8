@@ -161,7 +161,7 @@ input[type="number"]:focus {
     outline: none !important;
     border:1px solid #F5F5F5;
 }
-input[type="button"] {
+input[type="button"] ,input[type="submit"] {
   background-color: #3F2305;
   color: #DFD7BF;
   padding: 10px 20px;
@@ -180,4 +180,82 @@ label{
 }
 .next{
     margin-top:0%;
+}
+.special {
+  width: 100%;
+  padding: 10px;
+  margin-left: 0;
+  margin-bottom: 15px;
+  border:1px solid #DFD7BF;
+  width: 90%;
+  /* border-bottom: none !important; */
+  outline: none !important;
+  border-radius: 7px;
+}
+.special:focus {
+        outline: none !important;
+    border:1px solid #3F2305;
+}
+.pie3{
+    align-items: left !important;
+    float: left !important;
+    background-color: transparent !important;
+    margin-top: 30px;
+    margin-left: 30%;
+    box-shadow:5px 3px 10px 4px #3F2305  ;
+    outline: 3px solid #F2EAD3;
+    & h3, & h6, & h1, & h2{
+        color: #3F2305;
+        background-color: #F2EAD3;
+        padding: 0px;
+        margin:0px;
+        font-family: Arial, Helvetica, sans-serif;
+        border: 6px #3F2305 !important;
+    }
+        #we{
+        color: #F2EAD3;
+        background-color: #3F2305;
+        padding: 0px;
+        margin:0px;
+        font-family: Arial, Helvetica, sans-serif;
+        border: 6px #3F2305 !important;
+    }
+    & td, & th, & table, & tr{
+        color: #3F2305;
+        background-color: #F2EAD3;
+        padding-left: 20px;
+        margin:0px;
+        font-family: Arial, Helvetica, sans-serif;
+        border: 6px #F2EAD3 !important;
+    }
+    & tr{
+        width: 100%;
+    }
+   &  input[type="text"]{
+   width: 95%;
+  padding: 10px;
+  margin-left: 0;
+  margin-bottom: 15px;
+  border:1px solid #F5F5F5;
+  border-bottom: none !important;
+  outline: none !important;
+  border-radius: 7px;
+    box-shadow:1px 0px 3px 0px #3F2305;
+    }
+    & button{
+        background-color: #3F2305;
+  color: #DFD7BF;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+    }
+}
+.align3{
+    background-color: #F2EAD3;
+    margin-left: 30%;
+}
+table{
+    padding: 20px;
 }

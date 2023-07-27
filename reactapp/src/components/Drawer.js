@@ -239,9 +239,8 @@ const ListItem = withStyles({
                   open={Boolean(anchorElUser)}
                   onClose={handleCloseUserMenu}
                 >
-                  {settings.map((setting) => (
+                  <Link to="/home">
                     <MenuItem
-                      key={setting}
                       onClick={handleCloseUserMenu}
                       sx={{
                         "&:hover": {
@@ -250,9 +249,22 @@ const ListItem = withStyles({
                         },
                       }}
                     >
-                      <Typography textAlign="center" component="a" href="/">{setting}</Typography>
+                      <Typography textAlign="center">{user.email}</Typography>
                     </MenuItem>
-                  ))}
+                  </Link>
+                    <MenuItem
+                      onClick={handleCloseUserMenu}
+                      sx={{
+                        "&:hover": {
+                          backgroundColor: "#DFD7BF",
+                          color: "white",
+                        },
+                      }}
+                    >
+                      <Typography textAlign="center" component="a" href="/">
+                        Logout
+                      </Typography>
+                    </MenuItem>
                 </Menu>
               </Box>
             </Toolbar>
@@ -283,7 +295,7 @@ const ListItem = withStyles({
             </DrawerHeader>
             <Divider />
             <List>
-              <ListItem disablePadding>
+              {/* <ListItem disablePadding>
                 <ListItemButton>
                   <ListItemIcon>
                     <ReceiptIcon />
@@ -298,14 +310,14 @@ const ListItem = withStyles({
                   </ListItemIcon>
                   <ListItemText primary="Financial Report" />
                 </ListItemButton>
-              </ListItem>
+              </ListItem> */}
               <ListItem disablePadding>
-                <ListItemButton>
+             <Link to="/pay">   <ListItemButton>
                   <ListItemIcon>
                     <AttachMoneyIcon />
                   </ListItemIcon>
                   <ListItemText primary="Payroll Managemnt" />
-                </ListItemButton>
+                </ListItemButton></Link>
               </ListItem>
               <ListItem disablePadding>
                 <ListItemButton>
@@ -330,21 +342,23 @@ const ListItem = withStyles({
                 </ListItemButton>
               </ListItem>
               <ListItem disablePadding>
-                <ListItemButton>
-                  <ListItemIcon>
-                    <SummarizeIcon />
-                  </ListItemIcon>
-                  <ListItemText primary="Bank Reconciliation" />
-                </ListItemButton>
+                <Link to="/feed">
+                  <ListItemButton>
+                    <ListItemIcon>
+                      <SummarizeIcon />
+                    </ListItemIcon>
+                    <ListItemText primary="Feedback" />
+                  </ListItemButton>
+                </Link>
               </ListItem>
-              <ListItem disablePadding>
+              {/* <ListItem disablePadding>
                 <ListItemButton>
                   <ListItemIcon>
                     <AccountBoxIcon />
                   </ListItemIcon>
                   <ListItemText primary="Account Settings" />
                 </ListItemButton>
-              </ListItem>
+              </ListItem> */}
             </List>
           </Drawer>
         </AppBar>

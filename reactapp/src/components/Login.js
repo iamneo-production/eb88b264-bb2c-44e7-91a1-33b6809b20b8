@@ -1,13 +1,16 @@
-import React, { useState , useEffect} from 'react';
-import { Helmet } from 'react-helmet';
+import React, { useState } from "react";
+import { Helmet } from "react-helmet";
 import { useNavigate } from "react-router-dom";
-import { useDispatch , useSelector} from 'react-redux';
+import { useDispatch } from "react-redux";
+import axios from "axios";
+
 const LoginPage = () => {
   const navigate = useNavigate();
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const user = { email };
   const dispatch = useDispatch();
-   const user = {email,};
+
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
   };
@@ -16,25 +19,37 @@ const LoginPage = () => {
     setPassword(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Email:', email);
-    console.log('Password:', password);
-    alert("Successfully Logged in with " + email);
-    dispatch(
-      {type: "LOGIN",payload:user}
-    );
-    setEmail('');
-    setPassword('');
-    navigate("/home");
+
+    try {
+      const response = await axios.post(
+        "http://localhost:8080/auth/authenticate",
+        {
+          email: email,
+          password: password,
+        }
+      ).then((response)=>{
+        localStorage.setItem('token',response.data.token);
+        localStorage.setItem('firstName',response.data.firstName);
+        localStorage.setItem('lastName',response.data.lastName);
+        localStorage.setItem('email',email);
+      })
+      dispatch({ type: "LOGIN", payload: user });
+
+      alert("Successfully Logged in with " + email);
+      setEmail("");
+      setPassword("");
+
+      navigate("/home");
+    } catch (error) {
+      console.error("Login error:", error);
+      alert("Login failed. Please try again.");
+    }
   };
 
-    const css = require("../css/login.css").toString();
-    // useEffect(() => {
-    //   if (user) {
-    //     navigate("/home");
-    //   }
-    // });
+  const css = require("../css/login.css").toString();
+
   return (
     <div>
       <Helmet>{css}</Helmet>
@@ -58,9 +73,9 @@ const LoginPage = () => {
               required
             />
             <input type="checkbox" id="remember" />
-            <label for="remember">Remember me</label>
+            <label htmlFor="remember">Remember me</label>
             <br />
-              <button type="submit">Login</button>
+            <button type="submit">Login</button>
           </form>
         </div>
       </div>

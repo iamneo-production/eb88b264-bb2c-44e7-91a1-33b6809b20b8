@@ -1,18 +1,27 @@
 import React from "react";
 import PersistentDrawerLeft from "./Drawer";
 import { Helmet } from "react-helmet";
-import { Pie} from "./Piechart"
+import { Pie } from "./Piechart";
 import { useSelector } from "react-redux";
 import { selectUser } from "../Features/userSlice";
 import Back from "./Back";
 import ComboBox from "./Select";
 import BasicArea from "./LineChart";
 import SelectAllTransferList from "./Transfer";
+import { useState } from "react";
 
 const Home = () => {
   const css = require("../css/home.css").toString();
-    const user = useSelector(selectUser);
-          console.log(user);
+  const user = useSelector(selectUser);
+  console.log(user);
+  const [income, setIncome] = useState(0);
+  const handleChange = (e) => {
+    setIncome(e.target.value);
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setIncome("$");
+  };
   return (
     <>
       <Helmet>{css}</Helmet>
@@ -39,8 +48,18 @@ const Home = () => {
         <div className="pie1">
           <h3>Surplus</h3>
           <br />
-            <input type="number" name="income" placeholder="$"></input>
-            <input type="button" value="Add to Revenue"></input>
+          <form onSubmit={handleSubmit}>
+            <input
+              type="number"
+              name="income"
+              value={income}
+              placeholder="$"
+              onChange={handleChange}
+            ></input>
+            <input type="submit" value="Add to Revenue"></input>
+            <br />
+            <br />
+          </form>
         </div>
       </div>
 

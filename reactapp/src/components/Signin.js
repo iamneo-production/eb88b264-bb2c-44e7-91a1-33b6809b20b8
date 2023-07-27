@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useState } from "react";
 import { Helmet } from "react-helmet";
 import {  useNavigate} from "react-router-dom";
@@ -19,10 +20,25 @@ const SignUpPage = () => {
     }));
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     console.log(formData);
-        alert("Signed up a new account successfully.Please Login");
+        try{
+        const response=await axios.post(
+          "http://localhost:8080/auth/register",
+          {
+            first_name:formData.firstName,
+            last_name:formData.lastName,
+            email:formData.email,
+            password:formData.password
+          }
+        );
+
+        alert("Signed up a new account successfully.Please Login");}
+        catch(error){
+            alert(error.message);
+            console.log(error.message);
+        }
   };
     const css = require("../css/sign.css").toString();
   return (
